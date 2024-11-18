@@ -14,6 +14,7 @@ This HUD is designed to provide an immersive and user-friendly experience for Fi
   - **1.** Download the repository and place it in your FiveM server's resources folder.
   - **2.** Add ensure xsziro_hud to your server.cfg.
   - **3.** Restart your server, and the HUD will be live!
+  - **4.** Open your new hud with mouse wheel click!
 ## Configuration:
   - **config.lua** - server customization
   - ***/hud*** - ingame command
