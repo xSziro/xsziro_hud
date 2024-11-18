@@ -1,0 +1,528 @@
+@import url('https://fonts.cdnfonts.com/css/uni-sans-regular');
+*{
+    font-weight: bolder;
+    font-family: 'Uni Sans Demo', sans-serif;    
+    text-shadow: 0 0 6px black;
+
+}
+img{
+    z-index: 100;
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#belt{
+    z-index: 0;
+
+}
+html {
+    font-size: calc(8px + 0.3vw);
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#compasssq{
+    line-height: 3vh;
+    text-align: center;
+    font-size: 0.9vw;
+}
+#main {
+    position: absolute;
+    bottom: 0.69vh;
+    right: 0.5vw;
+    background-color: #1E2A32;
+    display: flex;
+    flex-direction: row;
+    
+    padding-right: 0.39vw;
+    border-radius: 1.04vh;
+    transition: all 0.5s ease;
+    
+}
+
+.square {
+    width: 2.34vw;
+    height: 4.17vh;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 0 0.42vh inset #001828;
+}
+#fuels{
+    transform: rotate(180deg) !important;
+
+}
+#small{
+    padding: 0;
+    margin: 0;
+}
+#setting{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    flex-direction: column;
+    background-color: #1e2a32;
+    padding: 1%;
+    border-radius: 2%;
+    box-shadow: inset 0 0 10px #001828;
+}
+#setting div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+
+}
+#setting button{
+    padding: 1%;
+    border-radius: 0.2vw;
+    border: 0;
+}
+#setting input[type="color"]{
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    width: 50%;
+}
+#setting input{
+    text-align: left;
+
+}
+#setting label{
+    width: 100%;
+
+}
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0;
+  
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+  
+    display: grid;
+    place-content: center;
+  }
+  
+  input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    background-color: rgb(255, 255, 255);
+  }
+  
+  input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+  
+
+  
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 25% !important;
+    height: 1.5vh;
+  }
+  #color-picker-container {
+    width: 10px;
+    height: 10px;
+   
+}
+#hud{
+    display: none;
+}
+.pcr-app {
+    background-color: #333333 !important; 
+    border-radius: 10px !important;       
+}
+
+.pcr-color {
+    background-color: #444444 !important;  
+}
+
+.pcr-button {
+    background-color: #555555 !important;  
+    color: white !important;               
+}
+
+.pcr-button:hover {
+    background-color: #666666 !important;  
+}
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #222222;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.25vh;
+    width: 1.25vh;
+    left: 0.125vh;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+
+  
+  input:checked + .slider:before {
+    left: 95%;
+
+    right: 0.125vh;
+    -webkit-transform: translate(-100%,-50%);
+    -ms-transform: translate(-100%,-50%);
+    transform: translate(-100%,-50%);
+  }
+  
+  .slider.round {
+    border-radius: 1vh;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+sub{
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    justify-content: middle;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 2.24vh;
+    margin-left: 0.19vw;
+    margin-right: 0.19vw;
+    display: flex;
+    flex-direction: row;
+    font-weight: bolder;
+    font-family: 'Uni Sans Demo', sans-serif;    
+    font-size: 1.25rem;
+}
+.back {
+    margin-bottom: 0.35vh;
+    width: 2.34vw;
+    height: 4.17vh;
+    margin: 0.69vh 0px 0.69vh 0.39vw;
+    background-color: #1D3A42;
+    border-radius: 1.04vh;
+    box-shadow: inset 0 0 0.21vh #1E2A32;
+    position: relative;
+}
+
+.back i {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3rem;
+}
+#belt svg {
+    width: 75%;
+    height: 75%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.4));
+
+}
+#carhud {
+    width: 14vw;
+    height: 3.82vh;
+    position: absolute;
+    bottom: 0.7vh;
+    right: 0.5vw;
+    background-color: #1e2a32;
+    display: grid;
+    grid-template-columns: 25% 45% auto;
+    
+    padding: 0.35vh;
+    padding-right: 0.39vw;
+    overflow: hidden;
+    border-radius: 1.04vh;
+    transition: 0.5s all linear;
+
+}
+
+
+
+#carhud .square {
+    width: 3.13vh;
+    height: 3.13vh;
+    position: absolute;
+    bottom: 0vh;
+    box-shadow: 0 0 0.42vh inset #001828;
+    transform: rotate(180deg);
+}
+#blockcar{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0.36vw;
+
+}
+sub{
+    font-size: 0.7vh;
+    vertical-align: sub;
+}
+#carhud .back {
+    width: 3.13vh;
+    height: 3.13vh;
+    margin: 0.35vh 0px 0.35vh 0.35vh;
+    background-color: #1D3A42;
+    border-radius: 1.04vh;
+    box-shadow: inset 0 0 0.21vh #1E2A32;
+}
+
+#carhud p {
+    font-weight: bolder;
+    font-family: 'Uni Sans Demo', sans-serif;    
+    font-size: 1.25rem;
+}
+
+.speed {
+    position: absolute;
+    top: 50%;
+    justify-content: middle;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 2.24vh;
+    margin-left: 0.19vw;
+    margin-right: 0.19vw;
+    display: flex;
+    flex-direction: row;
+    line-height: 100%;
+}
+
+#compass {
+    position: absolute;
+    left: 50%;
+    top: -330px;
+    transform: translateX(-50%);
+    transform-origin: 50% 50%;
+    transition: transform 0.1s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.kompas {
+    width: 400px;
+    height: 400px;
+    background-color: #ffffff00;
+    border: 2px solid #0099FF;
+    border-radius: 50%;
+    font-size: 150%;
+    box-shadow: 0 0 30px 10px #0099FFDD inset;
+}
+
+.n, .s, .e, .w, .ne, .nw, .se, .sw {
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.n {
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.s {
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.e {
+    top: 48%;
+    right: 5px;
+    transform: translateY(-50%);
+    rotate: -90deg;
+}
+
+.w {
+    top: 48%;
+    left: 5px;
+    transform: translateY(-50%);
+    rotate: 90deg;
+}
+
+.ne {
+    top: 60px;
+    right: 60px;
+    rotate: -135deg;
+}
+
+.nw {
+    top: 60px;
+    left: 60px;
+    rotate: 135deg;
+}
+
+.se {
+    bottom: 60px;
+    right: 60px;
+    rotate: -45deg;
+}
+
+.sw {
+    bottom: 60px;
+    left: 60px;
+    rotate: 45deg;
+}
+
+.speedback {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background: blue;
+    height: 3.13vh;
+
+    display: flex;
+    margin-left: 0.19vw;
+    border-radius: 0.94vh;
+    box-shadow: 0 0 0.42vh inset #001828;
+}
+
+.rpm {
+    height: 100%;
+    width: 0.23vw;
+    margin-left: 0.08vw;
+    border-radius: 0.14vh;
+    box-shadow: inset 0 0 0.07vh black;
+}
+
+.speedometer {
+    display: flex;
+    flex-direction: row;
+    height: 2.82vh;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 0.1vw;
+    font-family: 'Uni Sans Demo', sans-serif;
+    text-align: center;
+    box-sizing: content-box;
+
+}
+
+
+#streetname {
+    width: 14vw;
+    height: 3.5vh;
+    position: absolute;
+    bottom: 5.5vh;
+    right: 0.5vw;
+    background-color: #1e2a32;
+    display: flex;
+    flex-direction: row;
+    padding: 0.35vh;
+    padding-right: 0.39vw;
+    overflow: hidden;
+    border-radius: 1.04vh;
+    transition: 0.5s all linear;
+
+    font-size: 1.1vw;
+    font-family: 'Uni Sans Demo', sans-serif;
+    font-weight: 900;
+
+}
+
+#streetname .square {
+    width: 3vh;
+    height: 3vh;
+    position: absolute;
+    top: 50%;
+    margin-left: 0.5vh;
+    transform: translateY(-50%);
+    border-radius: 0.54vh;
+    box-shadow: 0 0 0.42vh inset #001828;
+}
+#streetname .text{
+    width: 11vw;
+    position: absolute;
+    right: 0.5vh;
+    height: 3.5vh;
+    line-height: 3.5vh;
+}
+
+
+
+#healths, #shields, #foods, #waters, #oxygens, #mics {
+    transform: rotate(180deg);
+}
+
+.square {
+    transition: all 0.5s ease;
+}
+
+.back {
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.compassletter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+}
+
+.fa-compass {
+    text-align: right;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 150%;
+    text-shadow: rgb(0, 0, 0) 0 0 5px;
+}
+
+.backcolor{
+    background-color: #0099FF;
+
+}

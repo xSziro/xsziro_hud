@@ -1,0 +1,10 @@
+{
+    "apply": "Apply",
+    "hudcolor": "HUD Color:",
+    "iconcolor": "Icon Color:",
+
+    "showfull": "Show Full:",
+    "hudpos": "HUD Layout:",
+    "vert": "Vertical",
+    "hor": "Horizontal"
+}

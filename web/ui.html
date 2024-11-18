@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/fea5dd5303.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/> 
+
+    <script src="js.js" type="module"></script>
+
+</head>
+<body>
+    <div id="setting">
+        <div>
+            <label for="hudcolor" id="hudcolor">Kolor HUDU:</label>
+            <div id="color-picker-container"></div>
+        </div>
+        <div>
+            <label for="iconcolor" id="iconcolor">Kolor HUDU:</label>
+            <div id="icon-color-picker-container"></div>
+        </div>
+        <div>
+
+            <label for="hudcolor" id="showfull">Pokazuj Pełne</label>
+            <label class="switch">
+                <input type="checkbox" name="showfull" id="showfullcheck">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div>
+            <h4 id="hudpos">Układ Hudu:</h4>
+            <div id="options">
+                <div>
+                    <input type="radio" name="position" id="position1" value="hor">
+                    <label for="position1" id="hor">Poziomo</label>
+                </div>
+                <div>
+                    <input type="radio" name="position" id="position2" value="ver">
+                    <label for="position2" id="vert">Pionowo</label>
+                </div>
+            </div>
+        </div>
+        <button id="apply"></button>
+    </div>
+    <div id="hud">
+
+
+        <div id='main'> 
+            <div class="back" id="health">
+                <div class='square backcolor' id="healths"></div>
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="back" id="shield">
+                <div class='square backcolor' id="shields"></div>
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="back" id="food">
+                <div class='square backcolor' id="foods"></div> 
+                <i class="fa-solid fa-hamburger"></i>
+            </div>
+            <div class="back" id="water">
+                <div class='square backcolor' id="waters"></div> 
+                <i class="fa-solid fa-glass-water"></i>
+            </div>
+            <div class="back" id="oxygen">
+                <div class='square backcolor' id="oxygens"></div> 
+                <i class="fa-solid fa-lungs"></i>
+            </div>
+            <div class="back" id="mic">
+                <div class='square backcolor' id="mics"></div>
+                <i class="fa-solid fa-microphone"></i>
+            </div>
+        </div>
+        <div id="carhudcontainer" style="display: none;">
+            <div id='carhud' > 
+                <div class="speedback backcolor"><div class="speed" id="speedo"><p>152mph</p></div><sub id="metrics">MPH</sub></div>
+                <div class="speedometer" id="rpms"><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div><div class="rpm"></div></div>
+                <div id="blockcar">
+                    <div class="back" id="backbelt">
+                        <div class='square backcolor' id="belt">
+                            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                            width="66.000000pt" height="66.000000pt" viewBox="0 0 66.000000 66.000000"
+                            preserveAspectRatio="xMidYMid meet">
+                            
+                            <defs>
+                              <filter id="shadow2">
+                                <feDropShadow dx="0" dy="0" stdDeviation="0.5" flood-color="black" />
+                              </filter>
+                            </defs>
+                            
+                            <g transform="translate(0.000000,66.000000) scale(0.100000,-0.100000)"
+                               fill="#000000" stroke="none"  filter="url(#shadow2)">
+                              <path d="M462 567 l-72 -73 53 -52 53 -52 73 74 c63 64 72 76 62 93 -11 22
+                              -77 83 -89 83 -4 0 -40 -33 -80 -73z"/>
+                              <path d="M335 507 c-38 -23 -70 -48 -73 -55 -6 -18 172 -196 190 -190 15 5
+                              100 139 93 147 -3 2 -15 -5 -28 -17 l-23 -22 -62 63 -62 63 22 21 c38 38 14
+                              34 -57 -10z m110 -166 c-14 -14 -21 -10 -67 36 -45 45 -50 54 -38 68 12 14 19
+                              10 67 -37 47 -47 51 -54 38 -67z"/>
+                              <path d="M230 325 c-28 -29 -46 -31 -72 -8 -18 16 -21 15 -56 -20 -35 -35 -36
+                              -38 -19 -54 16 -16 18 -16 39 5 l22 22 63 -62 63 -62 -22 -23 c-21 -22 -21
+                              -24 -5 -40 16 -16 19 -15 54 19 35 35 36 38 20 56 -23 26 -21 44 8 72 14 13
+                              25 29 25 35 0 14 -72 85 -86 85 -6 0 -21 -11 -34 -25z m58 -72 c-20 -22 -23
+                              -22 -40 -6 -18 16 -18 17 4 40 20 22 23 22 40 6 18 -16 18 -17 -4 -40z"/>
+                              <path d="M71 176 c-63 -64 -72 -76 -62 -93 11 -22 77 -83 89 -83 4 0 40 33 80
+                              73 l72 73 -53 52 -53 52 -73 -74z"/>
+                            </g>
+                          </svg>
+                          <!-- Pierwsze SVG z białym wypełnieniem -->
+                          <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                            width="64.000000pt" height="64.000000pt" viewBox="0 0 64.000000 64.000000"
+                            preserveAspectRatio="xMidYMid meet">
+                            
+                            <defs>
+                              <filter id="shadow2">
+                                <feDropShadow dx="0" dy="0" stdDeviation="0.5" flood-color="black" />
+                              </filter>
+                            </defs>
+                            
+                            <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
+                               fill="#FFFFFF" stroke="none" id="belticon" filter="url(#shadow2)">
+                              <path d="M462 567 l-72 -73 53 -52 53 -52 73 74 c63 64 72 76 62 93 -11 22
+                              -77 83 -89 83 -4 0 -40 -33 -80 -73z"/>
+                              <path d="M335 507 c-38 -23 -70 -48 -73 -55 -6 -18 172 -196 190 -190 15 5
+                              100 139 93 147 -3 2 -15 -5 -28 -17 l-23 -22 -62 63 -62 63 22 21 c38 38 14
+                              34 -57 -10z m110 -166 c-14 -14 -21 -10 -67 36 -45 45 -50 54 -38 68 12 14 19
+                              10 67 -37 47 -47 51 -54 38 -67z"/>
+                              <path d="M230 325 c-28 -29 -46 -31 -72 -8 -18 16 -21 15 -56 -20 -35 -35 -36
+                              -38 -19 -54 16 -16 18 -16 39 5 l22 22 63 -62 63 -62 -22 -23 c-21 -22 -21
+                              -24 -5 -40 16 -16 19 -15 54 19 35 35 36 38 20 56 -23 26 -21 44 8 72 14 13
+                              25 29 25 35 0 14 -72 85 -86 85 -6 0 -21 -11 -34 -25z m58 -72 c-20 -22 -23
+                              -22 -40 -6 -18 16 -18 17 4 40 20 22 23 22 40 6 18 -16 18 -17 -4 -40z"/>
+                              <path d="M71 176 c-63 -64 -72 -76 -62 -93 11 -22 77 -83 89 -83 4 0 40 33 80
+                              73 l72 73 -53 52 -53 52 -73 -74z"/>
+                            </g>
+                          </svg>
+                      
+                          <!-- Drugie SVG z czarnym wypełnieniem i większym rozmiarem -->
+
+                        </div>
+                      </div>
+                    <div class="back"><div class='square backcolor' id="fuels"></div> <i class="fa-solid fa-gas-pump"></i></div>
+
+                </div>
+            </div>
+            
+            <div id="streetname" >
+                <div class="square backcolor" id="compasssq">E</div>
+                <div class="text">
+                    <div id="street" class="textcolor">Nazwa ulicy</div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
