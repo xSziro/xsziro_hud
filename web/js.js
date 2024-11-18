@@ -9,33 +9,42 @@ $(document).ready(function(){
     var showmax = false
     var position = 0
     var incar = false
-
+    var belticon
+    var count
     function rpm(a) {
-        const $rpmsElement = $("#rpms");
-        $rpmsElement.empty();  
-        for (let i = 0; i < a && i < 25; i++) {
-            $rpmsElement.append(`<div class="rpm" style="background-color:${localStorage.getItem("color")};"></div>`);
+        if (belticon) {
+            count = 20
+        }else{
+            count = 25
+
         }
-        const $rpmElements = $(".rpm");
-        if ($rpmElements.length === 25) {
+        const rpmsElement = document.getElementById("rpms");
+        rpmsElement.innerHTML = ``;
+
+        for (let i = 0; i < a && i < count; i++) {
+            rpmsElement.innerHTML += `<div class="rpm" style="background-color:${localStorage.getItem("color")};"></div>`;
+        }
+
+        const rpmElements = document.getElementsByClassName("rpm");
+        
+        if (rpmElements.length === count) {
             let isRed = false;
             let intr;
             intr = setInterval(function() {
-                if ($(".rpm").length < 25) {
+                if (document.getElementsByClassName("rpm").length < count) {
                     clearInterval(intr); 
                     intr = null; 
                     return; 
                 }
-    
-                $rpmElements.each(function() {
-                    $(this).css("opacity", isRed ? "0.0" : "1.0");
-                });
-    
+
+
+                for (let i = 0; i < rpmElements.length; i++) {
+                    rpmElements[i].style.opacity = isRed ? "0.0" : "1.0";
+                }
                 isRed = !isRed;
             }, 100);
         }
     }
-    
 
     function setspeed(speed) {
         const $speedoElement = $("#speedo");
@@ -79,10 +88,10 @@ $(document).ready(function(){
     function hidehud(type) {
         const $parent = $("#" + type).parent();
         $parent.css("opacity", 0);
-        
         setTimeout(() => {
+
             $parent.css("display", "none");
-        }, 50);
+        }, 200);
     }
     
     function showhud(type) {
@@ -91,7 +100,7 @@ $(document).ready(function(){
         
         setTimeout(() => {
             $parent.css("opacity", 1);
-        }, 50);
+        }, 200);
     }
     
     function updatehud(type, value) {
@@ -226,6 +235,8 @@ $(document).ready(function(){
             updatecarhud("fuels", data.fuel);
         } else if(data.type == "updatebelt") {
             if (data.belticon) {
+                belticon = true
+
                 $("#backbelt").show();
                 $("#carhud").css("gridTemplateColumns", "25% 45% auto");
     
@@ -244,6 +255,7 @@ $(document).ready(function(){
             } else {
                 $("#carhud").css("gridTemplateColumns", '25% 60% auto');
                 $("#backbelt").hide();
+                belticon = false
             }
         } else if(data.type == "showhud") {
             if (hidden) {

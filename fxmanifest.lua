@@ -23,7 +23,7 @@ files {
 }
 export 'getColor'
 dependency {
+    'ox_fuel',
     'ox_lib',
-    'esx_status',
-    'ox_fuel'
+    'esx_status'
 }

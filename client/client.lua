@@ -6,8 +6,8 @@ local started = false
 local color = "#0058FF"
 local iconcolor = "#FFFFFF"
 local shown = false
-local locales = {}
 local hidden = false
+
 RegisterNUICallback('getLocale', function(data, cb)
     local key = data.key
 
@@ -205,10 +205,10 @@ lib.onCache('vehicle', function(value)
     inVeh = value and true or false
 
         
-        SendNUIMessage({
-            type = "showcarhud",
-            data = inVeh,
-        })
+    SendNUIMessage({
+        type = "showcarhud",
+        data = inVeh,
+    })
 
 
     DisplayRadar(inVeh)
@@ -222,7 +222,12 @@ lib.onCache('vehicle', function(value)
             else
                 speed = speed * 3.6
             end
+            if Config.seatbelt then
+                multiplier = 15.8
+            else
+                multiplier = 25.8
 
+            end
             SendNUIMessage({
                 type = 'updatecarhud',
                 carhud = inVeh,
@@ -231,7 +236,7 @@ lib.onCache('vehicle', function(value)
                 compass = directions[(math.floor((heading / 45) + 0.5) % 8) + 1],
                 road = GetStreetNameFromHashKey(GetStreetNameAtCoord(coords.x, coords.y, coords.z)),
                 fuel =  Entity(value).state.fuel,
-                rpms = GetVehicleCurrentRpm(value)*20,
+                rpms = GetVehicleCurrentRpm(value)*multiplier,
                 belticon = Config.seatbelt,
                 belt = Config.seatbeltgetter(),
 
