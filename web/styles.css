@@ -5,6 +5,9 @@
     text-shadow: 0 0 6px black;
 
 }
+#apply{
+    text-shadow: 0 0 0px white !important;
+}
 img{
     z-index: 100;
     object-fit: contain;
