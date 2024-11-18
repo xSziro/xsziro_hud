@@ -24,5 +24,6 @@ files {
 export 'getColor'
 dependency {
     'ox_lib',
-    'esx_status'
+    'esx_status',
+    'ox_fuel'
 }
